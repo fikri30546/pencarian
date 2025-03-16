@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">Search Engine</h1>
+        </div>
+        <div class="flex justify-center mb-8">
+            <input id="searchInput" type="text" class="w-full max-w-lg p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search..." oninput="performSearch()">
+        </div>
+        <div class="bg-white p-4 rounded-md shadow-md mb-8" id="resultsContainer">
+            <h2 class="text-2xl font-semibold mb-4">Search Results</h2>
+            <ul id="resultsList">
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 1</a>
+                    <p class="text-gray-600">Description for result 1. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 2</a>
+                    <p class="text-gray-600">Description for result 2. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 3</a>
+                    <p class="text-gray-600">Description for result 3. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 4</a>
+                    <p class="text-gray-600">Description for result 4. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 5</a>
+                    <p class="text-gray-600">Description for result 5. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 6</a>
+                    <p class="text-gray-600">Description for result 6. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 7</a>
+                    <p class="text-gray-600">Description for result 7. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 8</a>
+                    <p class="text-gray-600">Description for result 8. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 9</a>
+                    <p class="text-gray-600">Description for result 9. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 10</a>
+                    <p class="text-gray-600">Description for result 10. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 11</a>
+                    <p class="text-gray-600">Description for result 11. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 12</a>
+                    <p class="text-gray-600">Description for result 12. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 13</a>
+                    <p class="text-gray-600">Description for result 13. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 14</a>
+                    <p class="text-gray-600">Description for result 14. This is a brief description of what the result is about.</p>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="text-blue-500 hover:underline text-lg">Result 15</a>
+                    <p class="text-gray-600">Description for result 15. This is a brief description of what the result is about.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const results = [
+            { title: "Result 1", description: "Description for result 1. This is a brief description of what the result is about." },
+            { title: "Result 2", description: "Description for result 2. This is a brief description of what the result is about." },
+            { title: "Result 3", description: "Description for result 3. This is a brief description of what the result is about." },
+            { title: "Result 4", description: "Description for result 4. This is a brief description of what the result is about." },
+            { title: "Result 5", description: "Description for result 5. This is a brief description of what the result is about." },
+            { title: "Result 6", description: "Description for result 6. This is a brief description of what the result is about." },
+            { title: "Result 7", description: "Description for result 7. This is a brief description of what the result is about." },
+            { title: "Result 8", description: "Description for result 8. This is a brief description of what the result is about." },
+            { title: "Result 9", description: "Description for result 9. This is a brief description of what the result is about." },
+            { title: "Result 10", description: "Description for result 10. This is a brief description of what the result is about." },
+            { title: "Result 11", description: "Description for result 11. This is a brief description of what the result is about." },
+            { title: "Result 12", description: "Description for result 12. This is a brief description of what the result is about." },
+            { title: "Result 13", description: "Description for result 13. This is a brief description of what the result is about." },
+            { title: "NARUTO TO BORUTO: SHINOBI STRIKER", description: "Description for result 14. This is a brief description of what the result is about." },
+            { title: "NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS", description: "Description for result 15. This is a brief description of what the result is about." }
+        ];
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filteredResults = results.filter(result => {
+                return result.title.toLowerCase().includes(query) || result.description.toLowerCase().includes(query) || isFuzzyMatch(result.title.toLowerCase(), query) || isFuzzyMatch(result.description.toLowerCase(), query);
+            });
+            displayResults(filteredResults);
+        }
+
+        function isFuzzyMatch(text, query) {
+            const queryLength = query.length;
+            const textLength = text.length;
+            if (queryLength > textLength) {
+                return false;
+            }
+            if (queryLength === textLength) {
+                return query === text;
+            }
+            let mismatches = 0;
+            for (let i = 0, j = 0; i < queryLength && j < textLength; i++, j++) {
+                if (query[i] !== text[j]) {
+                    mismatches++;
+                    if (mismatches > 1) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function displayResults(filteredResults) {
+            const resultsList = document.getElementById('resultsList');
+            resultsList.innerHTML = '';
+            filteredResults.forEach(result => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('mb-4');
+                listItem.innerHTML = `
+                    <a href="#" class="text-blue-500 hover:underline text-lg">${result.title}</a>
+                    <p class="text-gray-600">${result.description}</p>
+                `;
+                resultsList.appendChild(listItem);
+            });
+        }
+
+        // Initial display of all results
+        displayResults(results);
+    </script>
+</body>
+</html>
